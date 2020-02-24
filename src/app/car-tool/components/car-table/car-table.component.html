@@ -1,0 +1,16 @@
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Make</th>
+      <th>Model</th>
+      <th>Year</th>
+      <th>Color</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="car-view-row" *ngFor="let car of cars" [car]="car" (deleteCar)="removeCar($event)"></tr>
+  </tbody>
+</table>
