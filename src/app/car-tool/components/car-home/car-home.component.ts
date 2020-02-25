@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Car } from '../models/car.model';
 
+import { CarsService} from '../../services/cars.service';
+
 
 @Component({
   selector: 'app-car-home',
@@ -9,41 +11,63 @@ import { Car } from '../models/car.model';
 })
 export class CarHomeComponent implements OnInit {
 
+  cars: Car[] = [];
+  editCarId = -1;
   headerText = 'Car Tool';
+  sortColName = '';
 
-  cars: Car[] = [
-    {
-      id: 1,
-      make: 'Honda',
-      model: 'Civic',
-      year: 2016,
-      color: 'Black',
-      price: 20000
-    },
-    {
-      id: 2,
-      make: 'Toyota',
-      model: 'Camry',
-      year: 2018,
-      color: 'Red',
-      price: 22000
-    }
-  ];
-
-  constructor() { }
+  constructor(private carsSvc: CarsService) { }
 
   ngOnInit(): void {
+
+    this.carsSvc.all().then(cars => {
+      this.cars = cars;
+    });
+
+    // this.cars = this.carsSvc.all();
   }
 
-  removeCar(id) {
-    this.cars = this.cars.filter(car => car.id !== id);
+  refreshCars() {
+    return this.carsSvc.all().then(cars => {
+      this.cars = cars;
+    });
+  }
+
+  removeCar(carId) {
+    // this.cars = this.carsSvc.remove(carId).all();
+    this.carsSvc
+      .remove(carId)
+      .then(() => this.refreshCars());
+    this.editCarId = -1;
   }
 
   addCar(car: Car) {
-    car.id = Math.max(...this.cars.map(c => c.id), 0) + 1;
-    this.cars = this.cars.concat([{
-      ...car
-    }]);
+    // this.cars = this.carsSvc.append(car).all();
+    this.carsSvc
+      .append(car)
+      .then(() => this.refreshCars());
+    this.editCarId = -1;
+  }
+
+  doEditCar(carId: number) {
+    this.editCarId = carId;
+  }
+
+  setSortColName(colName: string) {
+    this.sortColName = colName;
+    // this.carsSvc.setSortColName(colName);
+  }
+
+  doReplaceCar(car: Car) {
+    // this.cars = this.carsSvc.replace(car).all();
+    this.carsSvc
+      .replace(car)
+      .then(() => this.refreshCars());
+    this.editCarId = -1;
+  }
+
+  doCancelCar() {
+    this.editCarId = -1;
   }
 
 }

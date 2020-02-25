@@ -9,6 +9,7 @@ export class CarViewRowComponent implements OnInit {
 
   @Input() car;
   @Output() deleteCar = new EventEmitter<string>();
+  @Output() editCar = new EventEmitter<number>();
 
   constructor() { }
 
