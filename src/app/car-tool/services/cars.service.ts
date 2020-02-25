@@ -8,30 +8,14 @@ import { Car } from '../components/models/car.model';
 })
 export class CarsService {
 
-  private cars: Car[] = [
-    {
-      id: 1,
-      make: 'Honda',
-      model: 'Civic',
-      year: 2016,
-      color: 'Black',
-      price: 20000
-    },
-    {
-      id: 2,
-      make: 'Toyota',
-      model: 'Camry',
-      year: 2018,
-      color: 'Red',
-      price: 22000
-    }
-  ];
-
   constructor(private httpClient: HttpClient) { }
 
-  all() {
-    // return this.cars.concat();
-    return this.httpClient.get<Car[]>('http://localhost:4250/cars').toPromise();
+  all(sortColName: string) {
+    if (sortColName !== '') {
+      return this.httpClient.get<Car[]>('http://localhost:4250/cars?_sort=' + sortColName).toPromise();
+    } else {
+      return this.httpClient.get<Car[]>('http://localhost:4250/cars').toPromise();
+    }
   }
 
   append(car: Car) {

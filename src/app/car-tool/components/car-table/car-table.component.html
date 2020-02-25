@@ -11,7 +11,7 @@
     </tr>
   </thead>
   <tbody>
-    <ng-container *ngFor="let car of sortedCars">
+    <ng-container *ngFor="let car of cars">
       <tr class="car-view-row" *ngIf="car.id !== editCarId" [car]="car" (editCar)="editCar.emit($event)" (deleteCar)="removeCar($event)"></tr>
       <tr class="car-edit-row" *ngIf="car.id === editCarId" [car]="car" (saveCar)="saveCar.emit($event)" (cancelCar)="cancelCar.emit()"></tr>
     </ng-container>

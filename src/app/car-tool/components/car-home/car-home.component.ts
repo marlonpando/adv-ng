@@ -20,7 +20,7 @@ export class CarHomeComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.carsSvc.all().then(cars => {
+    this.carsSvc.all(this.sortColName).then(cars => {
       this.cars = cars;
     });
 
@@ -28,7 +28,7 @@ export class CarHomeComponent implements OnInit {
   }
 
   refreshCars() {
-    return this.carsSvc.all().then(cars => {
+    return this.carsSvc.all(this.sortColName).then(cars => {
       this.cars = cars;
     });
   }
@@ -55,6 +55,7 @@ export class CarHomeComponent implements OnInit {
 
   setSortColName(colName: string) {
     this.sortColName = colName;
+    this.refreshCars();
     // this.carsSvc.setSortColName(colName);
   }
 

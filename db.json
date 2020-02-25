@@ -23,6 +23,22 @@
       "color": "Maroon",
       "price": 2000,
       "id": 3
+    },
+    {
+      "make": "Toyota",
+      "model": "Previa",
+      "year": 1994,
+      "color": "Gold",
+      "price": 1500,
+      "id": 4
+    },
+    {
+      "make": "Edsel",
+      "model": "Jalopy",
+      "year": 1960,
+      "color": "Beige",
+      "price": 1,
+      "id": 5
     }
   ]
 }
