@@ -44,6 +44,13 @@ input[type = 'number'] {
     border: solid 1px var(--border-color);
 }
 
+input[type = 'text']:hover,
+input[type = 'number']:hover,
+input[type = 'text']:focus,
+input[type = 'number']:focus {
+    border-color: var(--main-color);
+}
+
 table {
     border-collapse: collapse;
     width: 100%;
@@ -88,11 +95,13 @@ button {
     border: solid 1px var(--main-color);
 }
 
-button:hover {
+button:hover,
+button:focus {
     background: var(--background-color);
 }
 
-button:hover span {
+button:hover span,
+button:focus span {
     border-bottom: solid 1px var(--main-color);
 }
 
