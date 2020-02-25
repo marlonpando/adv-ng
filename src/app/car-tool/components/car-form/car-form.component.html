@@ -1,15 +1,15 @@
 <form [formGroup]="carForm">
   <div>
-      <label for="make">Make</label><br>
-      <input type="text" id="make" formControlName="make" /><br>
-      <label for="model">Model</label><br>
-      <input type="text" id="model" formControlName="model" /><br>
-      <label for="year">Year</label><br>
-      <input type="number" id="year" formControlName="year" /><br>
-      <label for="color">Color</label><br>
-      <input type="text" id="color" formControlName="color" /><br>
-      <label for="price">Price</label><br>
+      <label for="make">Make</label>
+      <input type="text" id="make" formControlName="make" />
+      <label for="model">Model</label>
+      <input type="text" id="model" formControlName="model" />
+      <label for="year">Year</label>
+      <input type="number" id="year" formControlName="year" />
+      <label for="color">Color</label>
+      <input type="text" id="color" formControlName="color" />
+      <label for="price">Price</label>
       <input type="number" id="price" formControlName="price" />
-  </div><br>
-  <button type="button" (click)="doSubmitCar(carForm.value)" >{{ buttonText }}</button>
+  </div>
+  <button type="button" (click)="doSubmitCar(carForm.value)"><span>{{ buttonText }}</span></button>
 </form>
