@@ -49,7 +49,7 @@ export class CarTableComponent implements OnInit {
   @Output()
   cancelCar = new EventEmitter<void>();
   @Output()
-  sortOrder = new EventEmitter<any>();
+  sortOrder = new EventEmitter<any>(); // what is the type?
 
   constructor() { }
 
