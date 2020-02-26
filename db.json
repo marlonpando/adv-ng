@@ -1,44 +1,100 @@
 {
   "cars": [
     {
-      "id": 1,
-      "make": "Honda",
-      "model": "Civic",
-      "year": 2016,
+      "make": "Datsun",
+      "model": "210",
+      "year": 1982,
       "color": "Black",
-      "price": 20000
+      "price": 400,
+      "id": 1
     },
     {
-      "make": "Toyota",
-      "model": "Camry",
-      "year": 2018,
-      "color": "Red",
-      "price": 22000,
+      "make": "Chrevrolet",
+      "model": "Caprice",
+      "year": 1986,
+      "color": "Gold",
+      "price": 2500,
       "id": 2
     },
     {
-      "make": "Masda",
-      "model": "626",
-      "year": 1998,
-      "color": "Maroon",
-      "price": 2000,
+      "make": "Buick",
+      "model": "Skyhawk",
+      "year": 1988,
+      "color": "Blue",
+      "price": 1500,
       "id": 3
     },
     {
-      "make": "Toyota",
-      "model": "Previa",
-      "year": 1994,
-      "color": "Gold",
-      "price": 1500,
+      "make": "Mazda",
+      "model": "626",
+      "year": 1989,
+      "color": "Maroon",
+      "price": 0,
       "id": 4
     },
     {
-      "make": "Edsel",
-      "model": "Jalopy",
-      "year": 1960,
-      "color": "Beige",
-      "price": 1,
+      "make": "Hyundai",
+      "model": "Sonata",
+      "year": 2001,
+      "color": "Silver",
+      "price": 20000,
       "id": 5
+    },
+    {
+      "make": "Volvo",
+      "model": "S40",
+      "year": 1989,
+      "color": "White",
+      "price": 0,
+      "id": 6
+    },
+    {
+      "make": "Geo",
+      "model": "Prism",
+      "year": 1994,
+      "color": "Blue",
+      "price": 400,
+      "id": 7
+    },
+    {
+      "make": "Pontiac",
+      "model": "GrandAm",
+      "year": 1990,
+      "color": "Green",
+      "price": 0,
+      "id": 8
+    },
+    {
+      "make": "Honda",
+      "model": "Civic",
+      "year": 2001,
+      "color": "White",
+      "price": 4000,
+      "id": 9
+    },
+    {
+      "make": "Honda",
+      "model": "Civic",
+      "year": 2016,
+      "color": "Midnight Cherry",
+      "price": 23000,
+      "id": 10
+    },
+    {
+      "make": "Acura",
+      "model": "3TL",
+      "year": 2003,
+      "color": "Black",
+      "price": 0,
+      "id": 11
+    },
+    {
+      "make": "Ford",
+      "model": "Explorer",
+      "year": 2003,
+      "color": "Blue",
+      "price": 0,
+      "id": 12
     }
   ]
 }

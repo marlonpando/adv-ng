@@ -19,12 +19,9 @@ export class CarHomeComponent implements OnInit {
   constructor(private carsSvc: CarsService) { }
 
   ngOnInit(): void {
-
     this.carsSvc.all(this.sortColName).then(cars => {
       this.cars = cars;
     });
-
-    // this.cars = this.carsSvc.all();
   }
 
   refreshCars() {
@@ -34,7 +31,6 @@ export class CarHomeComponent implements OnInit {
   }
 
   removeCar(carId) {
-    // this.cars = this.carsSvc.remove(carId).all();
     this.carsSvc
       .remove(carId)
       .then(() => this.refreshCars());
@@ -42,7 +38,6 @@ export class CarHomeComponent implements OnInit {
   }
 
   addCar(car: Car) {
-    // this.cars = this.carsSvc.append(car).all();
     this.carsSvc
       .append(car)
       .then(() => this.refreshCars());
@@ -56,11 +51,9 @@ export class CarHomeComponent implements OnInit {
   setSortColName(colName: string) {
     this.sortColName = colName;
     this.refreshCars();
-    // this.carsSvc.setSortColName(colName);
   }
 
   doReplaceCar(car: Car) {
-    // this.cars = this.carsSvc.replace(car).all();
     this.carsSvc
       .replace(car)
       .then(() => this.refreshCars());
