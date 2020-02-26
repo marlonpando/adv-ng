@@ -49,9 +49,7 @@ export class CarTableComponent implements OnInit {
   @Output()
   cancelCar = new EventEmitter<void>();
   @Output()
-  newSortColName = new EventEmitter<string>();
-  @Output()
-  descOrder = new EventEmitter<boolean>();
+  sortOrder = new EventEmitter<any>();
 
   constructor() { }
 
@@ -65,11 +63,11 @@ export class CarTableComponent implements OnInit {
   doSort(colName: string) {
     if (this.sortColName === colName) {
       this.desc = !this.desc;
-      this.descOrder.emit(this.desc);
     } else {
       this.desc = false;
-      this.newSortColName.emit(colName);
+      this.sortColName = colName;
     }
+    this.sortOrder.emit([colName, this.desc]);
   }
 
 }

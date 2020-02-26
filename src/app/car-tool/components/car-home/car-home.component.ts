@@ -50,13 +50,9 @@ export class CarHomeComponent implements OnInit {
     this.editCarId = carId;
   }
 
-  setSortColName(colName: string) {
-    this.sortColName = colName;
-    this.refreshCars();
-  }
-
-  setDescOrder(desc: boolean) {
-    this.desc = desc;
+  setSortOrder(array: any) {
+    this.sortColName = array[0];
+    this.desc = array[1];
     this.refreshCars();
   }
 
