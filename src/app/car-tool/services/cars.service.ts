@@ -11,7 +11,7 @@ export class CarsService {
 
   constructor(private httpClient: HttpClient) { }
 
-  all(sortColName: string, desc?: boolean) {
+  all(sortColName: string, desc: boolean) {
     if (sortColName !== '' && desc) {
       return this.httpClient.get<Car[]>('http://localhost:4250/cars?_sort=' + sortColName + '&_order=desc').toPromise();
     } else if (sortColName !== '') {
