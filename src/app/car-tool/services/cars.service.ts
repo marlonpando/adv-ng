@@ -13,24 +13,24 @@ export class CarsService {
 
   all(sortColName: string, desc: boolean) {
     if (sortColName !== '' && desc) {
-      return this.httpClient.get<Car[]>('http://localhost:4250/cars?_sort=' + sortColName + '&_order=desc').toPromise();
+      return this.httpClient.get<Car[]>('http://localhost:4250/cars?_sort=' + sortColName + '&_order=desc');
     } else if (sortColName !== '') {
-      return this.httpClient.get<Car[]>('http://localhost:4250/cars?_sort=' + sortColName).toPromise();
+      return this.httpClient.get<Car[]>('http://localhost:4250/cars?_sort=' + sortColName);
     } else {
-      return this.httpClient.get<Car[]>('http://localhost:4250/cars').toPromise();
+      return this.httpClient.get<Car[]>('http://localhost:4250/cars');
     }
   }
 
   append(car: Car) {
-    return this.httpClient.post<Car>('http://localhost:4250/cars', car).toPromise();
+    return this.httpClient.post<Car>('http://localhost:4250/cars', car);
   }
 
   replace(car: Car) {
-    return this.httpClient.put<Car>('http://localhost:4250/cars/' + car.id, car).toPromise();
+    return this.httpClient.put<Car>('http://localhost:4250/cars/' + car.id, car);
   }
 
   remove(carId: number) {
-    return this.httpClient.delete<void>('http://localhost:4250/cars/' + carId).toPromise();
+    return this.httpClient.delete<void>('http://localhost:4250/cars/' + carId);
   }
 
 }

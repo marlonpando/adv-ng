@@ -1,4 +1,13 @@
 {
+  "colors": [
+    { "id": 1, "name": "red" },
+    { "id": 2, "name": "blue" },
+    { "id": 3, "name": "yellow" },
+    { "id": 4, "name": "black" },
+    { "id": 5, "name": "purple" },
+    { "id": 6, "name": "orange" },
+    { "id": 7, "name": "brown" }
+  ],
   "cars": [
     {
       "make": "Datsun",
@@ -95,14 +104,6 @@
       "color": "Blue",
       "price": 0,
       "id": 12
-    },
-    {
-      "make": "Ford",
-      "model": "Galaxie 500",
-      "year": 1974,
-      "color": "Blue",
-      "price": 1,
-      "id": 13
     }
   ]
 }
