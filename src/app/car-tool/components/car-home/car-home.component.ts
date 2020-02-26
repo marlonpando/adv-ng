@@ -21,7 +21,7 @@ export class CarHomeComponent implements OnInit {
   constructor(private carsSvc: CarsService) { }
 
   ngOnInit(): void {
-    this.carsSvc.all(this.sortColName).then(cars => {
+    this.carsSvc.all(this.sortColName, this.desc).then(cars => {
       this.cars = cars;
     });
   }

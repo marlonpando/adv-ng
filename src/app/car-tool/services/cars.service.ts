@@ -15,7 +15,7 @@ export class CarsService {
     if (sortColName !== '' && desc) {
       return this.httpClient.get<Car[]>('http://localhost:4250/cars?_sort=' + sortColName + '&_order=desc').toPromise();
     } else if (sortColName !== '') {
-      return this.httpClient.get<Car[]>('http://localhost:4250/cars?_sort=' + sortColName+ '&_order=asc').toPromise();
+      return this.httpClient.get<Car[]>('http://localhost:4250/cars?_sort=' + sortColName).toPromise();
     } else {
       return this.httpClient.get<Car[]>('http://localhost:4250/cars').toPromise();
     }
