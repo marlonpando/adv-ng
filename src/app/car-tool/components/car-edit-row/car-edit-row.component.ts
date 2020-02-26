@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
-import { Car } from '../models/car.model';
+import { Car } from '../../../models/car.model';
 
 @Component({
   selector: '.car-edit-row',

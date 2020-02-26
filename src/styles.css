@@ -122,14 +122,44 @@ ul {
 }
 
 th a {
-  color: var(--main-color);
-  text-decoration: none;
+    position: relative;
+    color: var(--main-color);
+    text-decoration: none;
+    padding: 8px 24px 8px 16px;
+    margin-left: 8px;
 }
 
-th a:hover span {
-  border-bottom: solid 1px var(--main-color);
+th a:hover span,
+th a:focus span {
+    border-bottom: solid 1px var(--main-color);
 }
 
 td button:not(:last-of-type) {
-  margin-right: 8px;
+    margin-right: 8px;
+}
+
+th a::after {
+    display: block;
+    border-right: solid 4px transparent;
+    border-left: solid 4px transparent;
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    margin-top: -2px;
+}
+
+th a:hover:not(.desc)::after,
+th a:focus:not(.desc)::after {
+    content: '';
+    border-top: solid var(--button-color) 4px;
+}
+
+th a.active:not(.desc)::after {
+    content: '';
+    border-top: solid var(--main-color) 4px;
+}
+
+th a.active.desc::after {
+    content: '';
+    border-bottom: solid var(--main-color) 4px;
 }

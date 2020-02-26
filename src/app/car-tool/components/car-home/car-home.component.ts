@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Car } from '../models/car.model';
+import { Car } from '../../../models/car.model';
 
 import { CarsService} from '../../services/cars.service';
 
@@ -9,6 +9,7 @@ import { CarsService} from '../../services/cars.service';
   templateUrl: './car-home.component.html',
   styleUrls: ['./car-home.component.css']
 })
+
 export class CarHomeComponent implements OnInit {
 
   cars: Car[] = [];
