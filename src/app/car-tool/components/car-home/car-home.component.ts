@@ -16,6 +16,7 @@ export class CarHomeComponent implements OnInit {
   editCarId = -1;
   headerText = 'Car Tool';
   sortColName = '';
+  desc = false;
 
   constructor(private carsSvc: CarsService) { }
 
@@ -26,7 +27,7 @@ export class CarHomeComponent implements OnInit {
   }
 
   refreshCars() {
-    return this.carsSvc.all(this.sortColName).then(cars => {
+    return this.carsSvc.all(this.sortColName, this.desc).then(cars => {
       this.cars = cars;
     });
   }
@@ -51,6 +52,11 @@ export class CarHomeComponent implements OnInit {
 
   setSortColName(colName: string) {
     this.sortColName = colName;
+    this.refreshCars();
+  }
+
+  setDescOrder(desc: boolean) {
+    this.desc = desc;
     this.refreshCars();
   }
 

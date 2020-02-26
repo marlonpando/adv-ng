@@ -11,9 +11,11 @@ export class CarsService {
 
   constructor(private httpClient: HttpClient) { }
 
-  all(sortColName: string) {
-    if (sortColName !== '') {
-      return this.httpClient.get<Car[]>('http://localhost:4250/cars?_sort=' + sortColName).toPromise();
+  all(sortColName: string, desc?: boolean) {
+    if (sortColName !== '' && desc) {
+      return this.httpClient.get<Car[]>('http://localhost:4250/cars?_sort=' + sortColName + '&_order=desc').toPromise();
+    } else if (sortColName !== '') {
+      return this.httpClient.get<Car[]>('http://localhost:4250/cars?_sort=' + sortColName+ '&_order=asc').toPromise();
     } else {
       return this.httpClient.get<Car[]>('http://localhost:4250/cars').toPromise();
     }

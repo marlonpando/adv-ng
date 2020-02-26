@@ -15,6 +15,7 @@ export class CarTableComponent implements OnInit {
   editCarId = -1;
   @Input()
   sortColName = '';
+  desc: boolean = false;
 
   get sortedCars() {
     if (this.sortColName.length > 0) {
@@ -49,6 +50,8 @@ export class CarTableComponent implements OnInit {
   cancelCar = new EventEmitter<void>();
   @Output()
   newSortColName = new EventEmitter<string>();
+  @Output()
+  descOrder = new EventEmitter<boolean>();
 
   constructor() { }
 
@@ -60,7 +63,13 @@ export class CarTableComponent implements OnInit {
   }
 
   doSort(colName: string) {
-    this.newSortColName.emit(colName);
+    if (this.sortColName === colName) {
+      this.desc = !this.desc;
+      this.descOrder.emit(this.desc);
+    } else {
+      this.desc = false;
+      this.newSortColName.emit(colName);
+    }
   }
 
 }
