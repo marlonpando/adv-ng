@@ -47,7 +47,6 @@ input[type = 'number'] {
     border: solid 1px var(--border-color);
     width: 100%;
     box-sizing: border-box;
-    text-align: center;
 }
 
 input[type = 'text']:hover,
@@ -172,7 +171,7 @@ table tr td button {
     padding: 8px;
 }
 
-table tr td button:hover, 
+table tr td button:hover,
 table tr td button:focus {
     background: transparent;
 }
@@ -189,10 +188,11 @@ table tr td button:active span {
 table input[type = 'text'],
 table input[type = 'number'] {
     margin-bottom: 0;
+    text-align: center;
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
