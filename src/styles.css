@@ -47,6 +47,7 @@ input[type = 'number'] {
     border: solid 1px var(--border-color);
     width: 100%;
     box-sizing: border-box;
+    text-align: center;
 }
 
 input[type = 'text']:hover,
@@ -60,6 +61,7 @@ table {
     border-collapse: collapse;
     width: 100%;
     margin: 0 0 2em;
+    table-layout: fixed;
 }
 
 th, td {
@@ -163,4 +165,34 @@ th a.active:not(.desc)::after {
 th a.active.desc::after {
     content: '';
     border-bottom: solid var(--main-color) 4px;
+}
+
+table tr td button {
+    border: 0;
+    padding: 8px;
+}
+
+table tr td button:hover, 
+table tr td button:focus {
+    background: transparent;
+}
+
+table tr td button:active {
+    color: var(--main-color);
+    background: transparent;
+}
+
+table tr td button:active span {
+    border-bottom-color: var(--main-color);
+}
+
+table input[type = 'text'],
+table input[type = 'number'] {
+    margin-bottom: 0;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }

@@ -9,7 +9,7 @@
       "id": 1
     },
     {
-      "make": "Chrevrolet",
+      "make": "Chevrolet",
       "model": "Caprice",
       "year": 1986,
       "color": "Gold",
@@ -95,6 +95,14 @@
       "color": "Blue",
       "price": 0,
       "id": 12
+    },
+    {
+      "make": "Ford",
+      "model": "Galaxie 500",
+      "year": 1974,
+      "color": "Blue",
+      "price": 1,
+      "id": 13
     }
   ]
 }
