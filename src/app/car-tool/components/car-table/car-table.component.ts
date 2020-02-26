@@ -17,7 +17,7 @@ export class CarTableComponent implements OnInit {
   sortColName = '';
   desc: boolean = false;
 
-  get sortedCars() {
+  get sortedCars() { // for reference only
     if (this.sortColName.length > 0) {
 
       return this.cars.concat().sort((a: Car, b: Car) => {
