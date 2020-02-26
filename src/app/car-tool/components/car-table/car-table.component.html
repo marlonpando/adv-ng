@@ -1,12 +1,12 @@
 <table>
   <thead>
     <tr>
-      <th><a href="javascript: void(0);" (click)="doSort('id')" [ngClass]="{'active': sortColName === 'id', 'desc': desc && sortColName === 'id' }"><span>ID</span></a></th>
-      <th><a href="javascript: void(0);" (click)="doSort('make')" [ngClass]="{'active': sortColName === 'make', 'desc': desc && sortColName === 'make' }"><span>Make</span></a></th>
-      <th><a href="javascript: void(0);" (click)="doSort('model')" [ngClass]="{'active': sortColName === 'model', 'desc': desc && sortColName === 'model' }"><span>Model</span></a></th>
-      <th><a href="javascript: void(0);" (click)="doSort('year')" [ngClass]="{'active': sortColName === 'year', 'desc': desc && sortColName === 'year' }"><span>Year</span></a></th>
-      <th><a href="javascript: void(0);" (click)="doSort('color')" [ngClass]="{'active': sortColName === 'color', 'desc': desc && sortColName === 'color' }"><span>Color</span></a></th>
-      <th><a href="javascript: void(0);" (click)="doSort('price')" [ngClass]="{'active': sortColName === 'price', 'desc': desc && sortColName === 'price' }"><span>Price</span></a></th>
+      <th><a href="javascript: void(0);" (click)="doSort('id')" [ngClass]="getButtonClass('id')"><span>ID</span></a></th>
+      <th><a href="javascript: void(0);" (click)="doSort('make')" [ngClass]="getButtonClass('make')"><span>Make</span></a></th>
+      <th><a href="javascript: void(0);" (click)="doSort('model')" [ngClass]="getButtonClass('model')"><span>Model</span></a></th>
+      <th><a href="javascript: void(0);" (click)="doSort('year')" [ngClass]="getButtonClass('year')"><span>Year</span></a></th>
+      <th><a href="javascript: void(0);" (click)="doSort('color')" [ngClass]="getButtonClass('color')"><span>Color</span></a></th>
+      <th><a href="javascript: void(0);" (click)="doSort('price')" [ngClass]="getButtonClass('price')"><span>Price</span></a></th>
       <th>Actions</th>
     </tr>
   </thead>

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Car } from '../../../models/car.model';
+import { SortInfo } from '../../car-tool.types';
 
 @Component({
   selector: 'app-car-table',
@@ -49,7 +50,7 @@ export class CarTableComponent implements OnInit {
   @Output()
   cancelCar = new EventEmitter<void>();
   @Output()
-  sortOrder = new EventEmitter<any>(); // what is the type?
+  sortOrder = new EventEmitter<SortInfo>(); // what is the type?
 
   constructor() { }
 
@@ -68,6 +69,10 @@ export class CarTableComponent implements OnInit {
       this.sortColName = colName;
     }
     this.sortOrder.emit([colName, this.desc]);
+  }
+
+  getButtonClass(id: string) {
+    return {'active': this.sortColName === id, 'desc': this.desc && this.sortColName === id }
   }
 
 }

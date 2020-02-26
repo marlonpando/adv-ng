@@ -4,6 +4,7 @@ import { switchMap } from 'rxjs/operators';
 
 import { CarsService} from '../../services/cars.service';
 import { Observable, of } from 'rxjs';
+import { SortInfo } from '../../car-tool.types';
 
 
 @Component({
@@ -52,9 +53,10 @@ export class CarHomeComponent implements OnInit {
     this.editCarId = carId;
   }
 
-  setSortOrder(array: any) {
-    this.sortColName = array[0];
-    this.desc = array[1];
+  setSortOrder(sortInfo: SortInfo) {
+    const [ sortColName, desc ] = sortInfo;
+    this.sortColName = sortColName;
+    this.desc = desc;
     this.refreshCars();
   }
 
